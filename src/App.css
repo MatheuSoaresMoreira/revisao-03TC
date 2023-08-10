@@ -30,6 +30,7 @@ form{
 form div{
     display: flex;
     margin-bottom: 0.8rem;
+    flex-direction: column;
     gap: 0.4rem;
 }
 

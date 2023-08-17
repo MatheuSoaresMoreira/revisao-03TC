@@ -3,13 +3,19 @@ import './App.css'
 
 function App() {
 const [usuario, setUsuario] = useState("")
+const [senha, setSenha] = useState("")
 
 function handleUsuario(evento){
 setUsuario(evento.target.value)
-
 }
 
-console.log(usuario)
+function handleSenha(evento){
+  setSenha(evento.target.value)
+}
+
+function handleSubmit(){
+alert(`Usuário: ${usuario} / Senha: ${senha} `)
+}
 
   return (
     <>
@@ -18,13 +24,13 @@ console.log(usuario)
 </header>
 
 <main>
-  <form action="">
+  <form action="" onSubmit={handleSubmit}>
     <div>
       <label htmlFor="usuario">Usuário</label>
       <input type="text" id="usuario" placeholder='Digite seu usuário' onChange={handleUsuario}/>
     </div>
     <div><label htmlFor="senha">Senha</label>
-    <input type="password" id="senha" placeholder='Digite sua senha' />
+    <input type="password" id="senha" placeholder='Digite sua senha' onChange={handleSenha} />
     </div>
     <button>Entrar</button>
   </form>
